@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alrededor de los EEUU</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="page">
+            <header class="header">
+                <img class="header__logo" src="./images/logo.svg" alt="Logo de Around The US">
+                <hr class="header__line">
+            </header>
+            <main class="content">
+                <div class="profile">
+                    <div class="profile__container">
+                        <div class="profile__overlay-container">
+                            <img class="profile__picture" src="./images/jacques_cousteau.jpg" alt="Foto del perfil">
+                        </div>
+                        <div class="profile__info">
+                            <div class="profile__wrapper">
+                                <h1 class="profile__name">Jacques Cousteau</h1>
+                                <button class="profile__edit-button"><img src="./images/edit-button.svg"></button>
+                            </div>
+                            <h2 class="profile__category">Explorador</h2>
+                        </div>
+                    </div>
+                    <button class="profile__add-button"><img src="./images/add-button.svg"></button>
+                </div>
+                <div class="elements">
+                    <ul class="elements__container">
+                        <li class="element">
+                            <div class="element__image" style="background-image: url('./images/yosemite.jpeg');"></div>
+                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
+                            <h3 class="element__title">Valle de Yosemite</h3>
+                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
+                        </li>
+                        <li class="element">
+                            <div class="element__image" style="background-image: url('./images/louise.jpeg');"></div>
+                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
+                            <h3 class="element__title">Lago Louise</h3>
+                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
+                        </li>
+                        <li class="element">
+                            <div class="element__image" style="background-image: url('./images/calvas.jpeg');"></div>
+                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
+                            <h3 class="element__title">Montañas Calvas</h3>
+                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
+                        </li>
+                        <li class="element">
+                            <div class="element__image" style="background-image: url('./images/latemar.jpeg');"></div>
+                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
+                            <h3 class="element__title">Latemar</h3>
+                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
+                        </li>
+                        <li class="element">
+                            <div class="element__image" style="background-image: url('./images/vanoise.jpeg');"></div>
+                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
+                            <h3 class="element__title">Vanois National Park</h3>
+                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
+                        </li>
+                        <li class="element">
+                            <div class="element__image" style="background-image: url('./images/dibraies.jpeg');"></div>
+                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
+                            <h3 class="element__title">Lago di Braies</h3>
+                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+            <footer class="footer">
+                <p class="footer__copyright">&copy; 2023 Stephany Acosta</p>
+            </footer>
+            <div class="popup popup_type_edit popup__closed">
+                <form class="form__container">
+                    <button class="popup__close-button"><img src="./images/close-button.svg"></button>
+                    <h2 class="form__title">Editar perfil</h2>
+                    <fieldset class="form__fields">
+                        <label class="form__field">
+                            <input type="text" id="name-input" class="form__input form__place-text" name="name" placeholder="Nombre" required>
+                        </label>
+                        <label class="form__field">
+                            <input type="text" id="category-input" class="form__input form__place-text" name="about" placeholder="Acerca de mí" required>
+                        </label>
+                        <button class= "form__submit-button" type="submit">Guardar</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="popup popup_type_add popup__closed">
+                <form class="form__container">
+                    <button class="popup__close-button"><img src="./images/close-button.svg"></button>
+                    <div class="form__container">
+                        <h2 class="form__title">Nuevo Lugar</h2>
+                        <fieldset class="form__fields">
+                            <label class="form__field">
+                                <input type="text" id="title-input" class="form__input form__place-text" name="title" placeholder="Título" required>
+                            </label>
+                            <label class="form__field">
+                                <input type="url" id="url-input" class="form__input form__place-url" name="url" placeholder="Enlace a la imagen" required>
+                            </label>
+                            <button class= "form__submit-button" type="submit">Crear</button>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+            <div class="popup popup_type_open-image popup__closed">
+                <div class="popup__open-image">
+                    <button class="popup__close-button"><img src="./images/close-button.svg"></button>
+                    <img src="./images/dibraies.jpeg" class="popup__image">
+                    <h2 class="popup__image-subtitle">Lago di Braies</h2>
+                </div>
+            </div>
+        </div>
+        <script src="./index.js"></script>
+    </body>
+</html>

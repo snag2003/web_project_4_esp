@@ -1,32 +1,53 @@
-let popup = document.querySelector(".popup"); 
+const popup = document.querySelector(".popup"); 
 
-let editProfileButton = document.querySelector(".profile__edit-button")
-let addImageButton = document.querySelector(".profile__add-button")
+const editPopup = document.querySelector(".popup_type_edit")
+const addPopup = document.querySelector(".popup_type_add")
 
-let submitButton = document.querySelector(".form__submit-button");
+const editProfileButton = document.querySelector(".profile__edit-button")
+const addImageButton = document.querySelector(".profile__add-button")
+const submitButton = document.querySelector(".form__submit-button");
+const closeButton = document.querySelector(".popup_type_add.popup__close-button");
 
-editProfileButton.addEventListener("click", popupDisplay);
+const name = document.querySelector(".profile__name");
+const category = document.querySelector(".profile__category");
 
-function popupDisplay() {
-    popup.classList.toggle("popup__closed");
+const nameInput = document.querySelector("#name-input");
+const categoryInput = document.querySelector("#category-input");
+
+function popupDisplayEdit() {
+    if (!popup.classList.contains("popup__visible")) {
+        nameInput.value = name.textContent;
+        categoryInput.value = category.textContent;
+    }
+
+    popup.classList.toggle("popup__visible");
 }
 
-function handleProfileFormSubmit(evt) {
+function popupDisplayAdd() {
+    addPopup.classList.toggle("popup__visible");
+}
+
+function handleProfileEditSubmit(evt) {
     evt.preventDefault();
 
-    let nameInput = document.querySelector("#name-input");
-    let nameCategory = document.querySelector("#category-input");
+    name.textContent = nameInput.value;
+    category.textContent = categoryInput.value;
 
-    newName = nameInput.value;
-    newCategory = nameCategory.value;
-
-    let name = document.querySelector(".profile__name");
-    let category = document.querySelector(".profile__category");
-
-    name.textContent = newName;
-    category.textContent = newCategory;
-
-    popupDisplay();
+    popupDisplayEdit();
 }
 
-popup.addEventListener('submit', handleProfileFormSubmit);
+function handleProfileAddSubmit(evt) {
+    evt.preventDefault();
+
+    popupDisplayAdd();
+}
+
+function handleCloseButton() {
+    addPopup.classList.remove("popup__visible")
+}
+
+editProfileButton.addEventListener("click", popupDisplayEdit);
+addImageButton.addEventListener("click", popupDisplayAdd);
+editPopup.addEventListener("submit", handleProfileEditSubmit);
+addPopup.addEventListener("submit", handleProfileAddSubmit);
+closeButton.addEventListener("click", handleCloseButton)

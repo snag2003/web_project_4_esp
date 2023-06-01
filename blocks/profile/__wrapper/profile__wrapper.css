@@ -3,3 +3,9 @@
     align-items: center;
     max-width: 428px;
 }
+
+@media screen and (max-width: 500px) {
+    .profile__wrapper {
+        justify-content: center;
+    }
+}

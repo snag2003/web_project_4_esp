@@ -30,42 +30,6 @@
                 </div>
                 <div class="elements">
                     <ul class="elements__container">
-                        <li class="element">
-                            <img class="element__image" src="./images/yosemite.jpeg" alt="Fotografía de; Valle de Yosemite">
-                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
-                            <h3 class="element__title">Valle de Yosemite</h3>
-                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
-                        </li>
-                        <li class="element">
-                            <img class="element__image" src="./images/louise.jpeg" alt="Fotografía del Lago Louise">
-                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
-                            <h3 class="element__title">Lago Louise</h3>
-                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
-                        </li>
-                        <li class="element">
-                            <img class="element__image" src="./images/calvas.jpeg" alt="Fotografía de las Montañas Calvas">
-                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
-                            <h3 class="element__title">Montañas Calvas</h3>
-                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
-                        </li>
-                        <li class="element">
-                            <img class="element__image" src="./images/latemar.jpeg" alt="Fotografía de Latemar">
-                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
-                            <h3 class="element__title">Latemar</h3>
-                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
-                        </li>
-                        <li class="element">
-                            <img class="element__image" src="./images/vanoise.jpeg" alt="Fotografía del Paque Nacional de Vanois">
-                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
-                            <h3 class="element__title">Paque Nacional de Vanois</h3>
-                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
-                        </li>
-                        <li class="element">
-                            <img class="element__image" src="./images/dibraies.jpeg" alt="Fotografía del Lago di Braies">
-                            <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
-                            <h3 class="element__title">Lago di Braies</h3>
-                            <button class="element__like-button"><img src="./images/like-button.svg"></button>
-                        </li>
                     </ul>
                 </div>
             </main>
@@ -78,10 +42,10 @@
                     <h2 class="form__title">Editar perfil</h2>
                     <fieldset class="form__fields">
                         <label class="form__field">
-                            <input type="text" id="name-input" class="form__input form__place-text" name="name" placeholder="Nombre" required>
+                            <input type="text" id="name-input" class="form__input form__place-text" name="name" placeholder="Nombre">
                         </label>
                         <label class="form__field">
-                            <input type="text" id="category-input" class="form__input form__place-text" name="about" placeholder="Acerca de mí" required>
+                            <input type="text" id="category-input" class="form__input form__place-text" name="about" placeholder="Acerca de mí">
                         </label>
                         <button class= "form__submit-button" type="submit">Guardar</button>
                     </fieldset>
@@ -90,27 +54,33 @@
             <div class="popup popup_type_add">
                 <form class="form__container">
                     <button class="popup__close-button"><img src="./images/close-button.svg"></button>
-                    <div class="form__container">
-                        <h2 class="form__title">Nuevo Lugar</h2>
-                        <fieldset class="form__fields">
-                            <label class="form__field">
-                                <input type="text" id="title-input" class="form__input form__place-text" name="title" placeholder="Título" required>
-                            </label>
-                            <label class="form__field">
-                                <input type="url" id="url-input" class="form__input form__place-url" name="url" placeholder="Enlace a la imagen" required>
-                            </label>
-                            <button class= "form__submit-button" type="submit">Crear</button>
-                        </fieldset>
-                    </div>
+                    <h2 class="form__title">Nuevo Lugar</h2>
+                    <fieldset class="form__fields">
+                        <label class="form__field">
+                            <input type="text" id="title-input" class="form__input form__place-text" name="title" placeholder="Título" required>
+                        </label>
+                        <label class="form__field">
+                            <input type="url" id="url-input" class="form__input form__place-url" name="url" placeholder="Enlace a la imagen" required>
+                        </label>
+                        <button class= "form__submit-button" type="submit">Crear</button>
+                    </fieldset>
                 </form>
             </div>
             <div class="popup popup_type_open-image">
                 <div class="popup__open-image">
                     <button class="popup__close-button"><img src="./images/close-button.svg"></button>
-                    <img src="./images/dibraies.jpeg" class="popup__image">
-                    <h2 class="popup__image-subtitle">Lago di Braies</h2>
+                    <img class="popup__image">
+                    <h2 class="popup__image-subtitle"></h2>
                 </div>
             </div>
+            <template id="new-card">
+                <li class="element">
+                    <img class="element__image">
+                    <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
+                    <h3 class="element__title"></h3>
+                    <button class="element__like-button"><img src="./images/like-button.svg"></button>
+                </li>
+            </template>
         </div>
         <script src="./index.js"></script>
     </body>

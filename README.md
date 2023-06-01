@@ -1,7 +1,7 @@
 # Proyecto 4: Alrededor de los Estados Unidos
 
 ### Descripción general
-Página Web que muestra fotos como una red social, puedes cambiar tu nombre y descripción de perfil.
+Página Web que muestra fotos como una red social, puedes cambiar tu nombre y descripción de perfil, añadir nuevas imagenes, dar like, y borrar imagenes.
 
 ### Tecnologías Usadas:
 * HTML
@@ -15,6 +15,4 @@ Página Web que muestra fotos como una red social, puedes cambiar tu nombre y de
 
 ## Final
 Proximamente seria ideal:
-1. Añadir funcionalidad a los botones de las imagenes.
-2. Agregar más imagenes.
-3. Guardar información registrada.
+1. Guardar información registrada.

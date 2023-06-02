@@ -1,87 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alrededor de los EEUU</title>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <div class="page">
-            <header class="header">
-                <img class="header__logo" src="./images/logo.svg" alt="Logo de Around The US">
-                <hr class="header__line">
-            </header>
-            <main class="content">
-                <div class="profile">
-                    <div class="profile__container">
-                        <div class="profile__overlay-container">
-                            <img class="profile__picture" src="./images/jacques_cousteau.jpg" alt="Foto del perfil">
-                        </div>
-                        <div class="profile__info">
-                            <div class="profile__wrapper">
-                                <h1 class="profile__name">Jacques Cousteau</h1>
-                                <button class="profile__edit-button"><img src="./images/edit-button.svg"></button>
-                            </div>
-                            <h2 class="profile__category">Explorador</h2>
-                        </div>
-                    </div>
-                    <button class="profile__add-button"><img src="./images/add-button.svg"></button>
-                </div>
-                <div class="elements">
-                    <ul class="elements__container">
-                    </ul>
-                </div>
-            </main>
-            <footer class="footer">
-                <p class="footer__copyright">&copy; 2023 Stephany Acosta</p>
-            </footer>
-            <div class="popup popup_type_edit">
-                <form class="popup__form">
-                    <button class="popup__close-button"><img src="./images/close-button.svg"></button>
-                    <h2 class="popup__title">Editar perfil</h2>
-                    <fieldset class="popup__fields">
-                        <label class="popup__field">
-                            <input type="text" id="name-input" class="popup__input" name="name" placeholder="Nombre">
-                        </label>
-                        <label class="popup__field">
-                            <input type="text" id="category-input" class="popup__input" name="about" placeholder="Acerca de mí">
-                        </label>
-                        <button class= "popup__submit-button" type="submit">Guardar</button>
-                    </fieldset>
-                </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alrededor de los EEUU</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img
+          class="header__logo"
+          src="./images/logo.svg"
+          alt="Logo de Around The US"
+        />
+        <hr class="header__line" />
+      </header>
+      <main class="content">
+        <div class="profile">
+          <div class="profile__container">
+            <div class="profile__overlay-container">
+              <img
+                class="profile__picture"
+                src="./images/jacques_cousteau.jpg"
+                alt="Foto del perfil"
+              />
             </div>
-            <div class="popup popup_type_add">
-                <form class="popup__form">
-                    <button class="popup__close-button"><img src="./images/close-button.svg"></button>
-                    <h2 class="popup__title">Nuevo Lugar</h2>
-                    <fieldset class="popup__fields">
-                        <label class="popup__field">
-                            <input type="text" id="title-input" class="popup__input" name="title" placeholder="Título" required>
-                        </label>
-                        <label class="popup__field">
-                            <input type="url" id="url-input" class="popup__input" name="url" placeholder="Enlace a la imagen" required>
-                        </label>
-                        <button class= "popup__submit-button" type="submit">Crear</button>
-                    </fieldset>
-                </form>
+            <div class="profile__info">
+              <div class="profile__wrapper">
+                <h1 class="profile__name">Jacques Cousteau</h1>
+                <button class="profile__edit-button">
+                  <img src="./images/edit-button.svg" />
+                </button>
+              </div>
+              <h2 class="profile__category">Explorador</h2>
             </div>
-            <div class="popup popup_type_open-image">
-                <div class="popup__open-image">
-                    <button class="popup__close-button"><img src="./images/close-button.svg"></button>
-                    <img class="popup__image">
-                    <h2 class="popup__image-subtitle"></h2>
-                </div>
-            </div>
-            <template id="new-card">
-                <li class="element">
-                    <img class="element__image">
-                    <button class="element__delete-button"><img src="./images/delete-button.svg"></button>
-                    <h3 class="element__title"></h3>
-                    <button class="element__like-button"><img src="./images/like-button.svg"></button>
-                </li>
-            </template>
+          </div>
+          <button class="profile__add-button">
+            <img src="./images/add-button.svg" />
+          </button>
         </div>
-        <script src="./index.js"></script>
-    </body>
+        <div class="elements">
+          <ul class="elements__container"></ul>
+        </div>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2023 Stephany Acosta</p>
+      </footer>
+      <div class="popup popup_type_edit">
+        <form class="popup__form">
+          <button class="popup__close-button">
+            <img src="./images/close-button.svg" />
+          </button>
+          <h2 class="popup__title">Editar perfil</h2>
+          <fieldset class="popup__fields">
+            <label class="popup__field">
+              <input
+                type="text"
+                id="name-input"
+                class="popup__input"
+                name="name"
+                placeholder="Nombre"
+              />
+            </label>
+            <label class="popup__field">
+              <input
+                type="text"
+                id="category-input"
+                class="popup__input"
+                name="about"
+                placeholder="Acerca de mí"
+              />
+            </label>
+            <button class="popup__submit-button" type="submit">Guardar</button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="popup popup_type_add">
+        <form class="popup__form">
+          <button class="popup__close-button">
+            <img src="./images/close-button.svg" />
+          </button>
+          <h2 class="popup__title">Nuevo Lugar</h2>
+          <fieldset class="popup__fields">
+            <label class="popup__field">
+              <input
+                type="text"
+                id="title-input"
+                class="popup__input"
+                name="title"
+                placeholder="Título"
+                required
+              />
+            </label>
+            <label class="popup__field">
+              <input
+                type="url"
+                id="url-input"
+                class="popup__input"
+                name="url"
+                placeholder="Enlace a la imagen"
+                required
+              />
+            </label>
+            <button class="popup__submit-button" type="submit">Crear</button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="popup popup_type_open-image">
+        <div class="popup__open-image">
+          <button class="popup__close-button">
+            <img src="./images/close-button.svg" />
+          </button>
+          <img class="popup__image" />
+          <h2 class="popup__image-subtitle"></h2>
+        </div>
+      </div>
+      <template id="new-card">
+        <li class="element">
+          <img class="element__image" />
+          <button class="element__delete-button">
+            <img src="./images/delete-button.svg" />
+          </button>
+          <h3 class="element__title"></h3>
+          <button class="element__like-button">
+            <img src="./images/like-button.svg" />
+          </button>
+        </li>
+      </template>
+    </div>
+    <script src="./index.js"></script>
+  </body>
 </html>

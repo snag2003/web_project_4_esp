@@ -1,19 +1,19 @@
 .element {
-    list-style: none;
-    position: relative;
-    background-color: #fff;
-    border-radius: 10px;
-    width: 282px;
-    height: 361px;
-    margin-bottom: 21px;
+  list-style: none;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 282px;
+  height: 361px;
+  margin-bottom: 21px;
 }
 
 @media screen and (max-width: 420px) {
-    .element {
-        margin-right: 0;
-    }
+  .element {
+    margin-right: 0;
+  }
 }
 
-.element:nth-of-type(3n+1) {
-    margin-left: 0;
+.element:nth-of-type(3n + 1) {
+  margin-left: 0;
 }

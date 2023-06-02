@@ -1,12 +1,12 @@
 .elements {
-    padding-top: 50px;
-    margin: auto;
-    max-width: 882px;
+  padding-top: 50px;
+  margin: auto;
+  max-width: 882px;
 }
 
 @media screen and (max-width: 1024px) {
-    .elements {
-        display: flex;
-        justify-content: center;
-    }
+  .elements {
+    display: flex;
+    justify-content: center;
+  }
 }

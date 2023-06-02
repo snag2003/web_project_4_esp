@@ -41,6 +41,7 @@ const imageCloseButton = imagePopup.querySelector(".popup__close-button");
 const name = document.querySelector(".profile__name");
 const category = document.querySelector(".profile__category");
 
+const popupInput = addPopup.querySelectorAll(".popup__input");
 const nameInput = document.querySelector("#name-input");
 const categoryInput = document.querySelector("#category-input");
 
@@ -76,6 +77,13 @@ imageCloseButton.addEventListener("click", () => {
 
 editPopup.addEventListener("submit", handleProfileEditSubmit);
 addPopup.addEventListener("submit", handleAddCardSubmit);
+
+urlInput.addEventListener("keyup", function (event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    popupDisplay(addPopup);
+  }
+});
 
 function popupDisplay(item) {
   item.classList.toggle("popup__visible");
@@ -127,8 +135,8 @@ function createCard(card) {
   });
 
   cardImage.addEventListener("click", () => {
-    let popupImage = document.querySelector(".popup__image");
-    let popupImageSubtitle = document.querySelector(".popup__image-subtitle");
+    const popupImage = document.querySelector(".popup__image");
+    const popupImageSubtitle = document.querySelector(".popup__image-subtitle");
     popupImage.src = card.link;
     popupImage.alt = card.name;
     popupImageSubtitle.textContent = card.name;

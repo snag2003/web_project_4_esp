@@ -33,7 +33,7 @@ const imagePopup = document.querySelector(".popup_type_open-image")
     
 const editProfileButton = document.querySelector(".profile__edit-button");
 const addImageButton = document.querySelector(".profile__add-button");
-const submitButton = document.querySelector(".form__submit-button");
+const submitButton = document.querySelector(".popup__submit-button");
 const addCloseButton = addPopup.querySelector(".popup__close-button");
 const editCloseButton = editPopup.querySelector(".popup__close-button");
 const imageCloseButton = imagePopup.querySelector(".popup__close-button");

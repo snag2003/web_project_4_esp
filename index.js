@@ -52,23 +52,26 @@ const elementsContainer = document.querySelector(".elements__container");
 
 
 editProfileButton.addEventListener("click", () => {
-    if (!popup.classList.contains("popup__visible")) {
+  if (!popup.classList.contains("popup__visible")) {
         nameInput.value = name.textContent;
         categoryInput.value = category.textContent;
-    }
-    popupDisplay(editPopup)
+  }
+  popupDisplay(editPopup)
 });
 
 addImageButton.addEventListener("click", () => {
-    popupDisplay(addPopup)
+  titleInput.value = "";
+  urlInput.value = "";
+  popupDisplay(addPopup)
 });
 
 addCloseButton.addEventListener("click", () => {
-    popupDisplay(addPopup)
+    
+  popupDisplay(addPopup)
 });
 
 imageCloseButton.addEventListener("click", () => {
-    popupDisplay(imagePopup)
+  popupDisplay(imagePopup)
 });
 
 editPopup.addEventListener("submit", handleProfileEditSubmit);
@@ -125,6 +128,7 @@ function createCard(card) {
     });
 
     cardImage.addEventListener('click', () => {
+
         let popupImage = document.querySelector('.popup__image');
         let popupImageSubtitle = document.querySelector('.popup__image-subtitle');
         popupImage.src = card.link;

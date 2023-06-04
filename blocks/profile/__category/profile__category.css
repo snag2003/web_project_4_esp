@@ -10,7 +10,7 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .profile__category {
     font-style: normal;
     font-weight: 400;

@@ -2,7 +2,7 @@
 
 ### Descripción general
 
-Página Web que muestra fotos como una red social, puedes cambiar tu nombre y descripción de perfil, añadir nuevas imagenes, dar like, y borrar imagenes.
+Página Web que muestra fotos como una red social, puedes cambiar tu nombre y descripción de perfil, añadir nuevas imagenes, dar like, y borrar imagenes. El formulario valida la informacion y se puede cerrar al presionar la tecla Esc o al presionar afuera de la ventana emergente.
 
 ### Tecnologías Usadas:
 

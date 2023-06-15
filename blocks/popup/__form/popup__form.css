@@ -6,8 +6,8 @@
   padding: 36px;
   position: fixed;
   top: 50%;
-  left: 50%;
-  margin: auto;
+  left: 45%;
+  margin: 32px 36px 36px;
   z-index: 2;
   transform: translate(-50%, -50%);
 }

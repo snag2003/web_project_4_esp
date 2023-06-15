@@ -54,8 +54,8 @@
         <p class="footer__copyright">&copy; 2023 Stephany Acosta</p>
       </footer>
       <div class="popup popup_type_edit">
-        <form class="popup__form">
-          <button class="popup__close-button">
+        <form class="popup__form" novalidate>
+          <button type="button" class="popup__close-button">
             <img
               src="./images/close-button.svg"
               alt="Logo de botón de cerrar"
@@ -70,7 +70,13 @@
                 class="popup__input"
                 name="name"
                 placeholder="Nombre"
+                minlength="2"
+                maxlength="40"
+                required
               />
+              <span class="popup__input-error name-input-error"
+                >Por favor, rellena este campo.</span
+              >
             </label>
             <label class="popup__field">
               <input
@@ -79,15 +85,21 @@
                 class="popup__input"
                 name="about"
                 placeholder="Acerca de mí"
+                minlength="2"
+                maxlength="400"
+                required
               />
+              <span class="popup__input-error category-input-error"
+                >Por favor, rellena este campo.</span
+              >
             </label>
             <button class="popup__submit-button" type="submit">Guardar</button>
           </fieldset>
         </form>
       </div>
       <div class="popup popup_type_add">
-        <form class="popup__form">
-          <button class="popup__close-button">
+        <form class="popup__form" novalidate>
+          <button type="button" class="popup__close-button">
             <img
               src="./images/close-button.svg"
               alt="Logo de botón de cerrar"
@@ -102,8 +114,13 @@
                 class="popup__input"
                 name="title"
                 placeholder="Título"
+                minlength="2"
+                maxlength="30"
                 required
               />
+              <span class="popup__input-error title-input-error"
+                >Por favor, rellena este campo.</span
+              >
             </label>
             <label class="popup__field">
               <input
@@ -114,6 +131,9 @@
                 placeholder="Enlace a la imagen"
                 required
               />
+              <span class="popup__input-error url-input-error"
+                >Por favor, introduce una dirección web.</span
+              >
             </label>
             <button class="popup__submit-button" type="submit">Crear</button>
           </fieldset>

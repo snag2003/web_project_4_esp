@@ -112,21 +112,6 @@ function renderCard(card) {
   document.querySelector(".elements__container").prepend(newCardElement);
 }
 
-const formConfig = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__submit-button",
-  inactiveButtonClass: "popup__submit-button_inactive",
-  inputErrorClass: "popup__input_error",
-  errorClass: "popup__input-error_active",
-};
-const formList = Array.from(document.querySelectorAll(formConfig.formSelector));
-
-formList.forEach((formElement) => {
-  const form = new FormValidator(formConfig, formElement);
-  form.enableValidation();
-});
-
 // Function to close popup when you click outside of it
 function closePopupOnOutsideClick(popup, popupElement) {
   popupElement.addEventListener("click", (evt) => {
@@ -142,21 +127,32 @@ closePopupOnOutsideClick(imagePopup, imagePopup);
 
 // Function to handle escape key press and close popups
 function escapeKeyHandler(evt) {
+  const popups = [imagePopup, editPopup, addPopup];
   if (evt.key === "Escape") {
-    closePopup(imagePopup);
-    closePopup(editPopup);
-    closePopup(addPopup);
-  }
-}
-
-// Function to close popup
-function closePopup(popup) {
-  if (popup.classList.contains("popup__visible")) {
-    togglePopupVisibility(popup);
+    popups.forEach((popup) => {
+      if (popup.classList.contains("popup__visible")) {
+        togglePopupVisibility(popup);
+      }
+    });
   }
 }
 
 document.addEventListener("keydown", escapeKeyHandler);
+
+const formConfig = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__submit-button",
+  inactiveButtonClass: "popup__submit-button_inactive",
+  inputErrorClass: "popup__input_error",
+  errorClass: "popup__input-error_active",
+};
+const formList = Array.from(document.querySelectorAll(formConfig.formSelector));
+
+formList.forEach((formElement) => {
+  const form = new FormValidator(formConfig, formElement);
+  form.enableValidation();
+});
 
 export {
   imagePopup,

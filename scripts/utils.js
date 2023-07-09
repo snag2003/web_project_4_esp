@@ -32,6 +32,7 @@ function handleAddCardSubmit(evt) {
     name: titleInput.value,
     link: urlInput.value,
   };
+
   renderCard(newCard);
   togglePopupVisibility(addPopup);
 }

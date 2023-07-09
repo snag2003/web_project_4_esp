@@ -26,6 +26,7 @@ function handleProfileEditSubmit(evt) {
 
 // Submit handler for add card form
 function handleAddCardSubmit(evt) {
+  const submitButton = addPopup.querySelector(".popup__submit-button");
   evt.preventDefault();
 
   const newCard = {
@@ -34,6 +35,8 @@ function handleAddCardSubmit(evt) {
   };
 
   renderCard(newCard);
+  submitButton.disabled = true;
+  submitButton.classList.add("popup__submit-button_inactive");
   togglePopupVisibility(addPopup);
 }
 

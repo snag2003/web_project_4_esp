@@ -44,6 +44,7 @@ class FormValidator {
     const hasInvalidInput = this._inputList.some(
       (inputElement) => !inputElement.validity.valid
     );
+
     if (hasInvalidInput) {
       this._buttonElement.classList.add(this._config.inactiveButtonClass);
       this._buttonElement.disabled = true;
@@ -55,18 +56,19 @@ class FormValidator {
 
   _setEventListeners() {
     this._inputList.forEach((inputElement) => {
-      inputElement.addEventListener("input", () => {
-        this._checkInputValidity(inputElement);
+      inputElement.addEventListener("input", (event) => {
+        this._checkInputValidity(event.target);
         this._toggleButtonState();
       });
     });
   }
 
   enableValidation() {
-    this._toggleButtonState();
     this._formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
+    this._toggleButtonState();
+
     this._setEventListeners();
   }
 }

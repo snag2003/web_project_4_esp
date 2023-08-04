@@ -1,4 +1,4 @@
-.profile__category {
+.profile__job {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .profile__category {
+  .profile__job {
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alrededor de los EEUU</title>
-    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div class="page">
       <header class="header">
         <img
           class="header__logo"
-          src="./images/logo.svg"
+          src="<%=require('./images/logo.svg')%>"
           alt="Logo de Around The US"
         />
         <hr class="header__line" />
@@ -22,7 +21,7 @@
             <div class="profile__overlay-container">
               <img
                 class="profile__picture"
-                src="./images/jacques_cousteau.jpg"
+                src="<%=require('./images/jacques_cousteau.jpg')%>"
                 alt="Foto del perfil"
               />
             </div>
@@ -31,17 +30,17 @@
                 <h1 class="profile__name">Jacques Cousteau</h1>
                 <button class="profile__edit-button">
                   <img
-                    src="./images/edit-button.svg"
+                    src="<%=require('./images/edit-button.svg')%>"
                     alt="Logo de botón de editar"
                   />
                 </button>
               </div>
-              <h2 class="profile__category">Explorador</h2>
+              <h2 class="profile__job">Explorador</h2>
             </div>
           </div>
           <button class="profile__add-button">
             <img
-              src="./images/add-button.svg"
+              src="<%=require('./images/add-button.svg')%>"
               alt="Logo de botón de eliminar"
             />
           </button>
@@ -53,11 +52,11 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2023 Stephany Acosta</p>
       </footer>
-      <div class="popup popup_type_edit">
+      <div class="popup popup_type_form popup_type_edit">
         <form class="popup__form" novalidate>
           <button type="button" class="popup__close-button">
             <img
-              src="./images/close-button.svg"
+              src="<%=require('./images/close-button.svg')%>"
               alt="Logo de botón de cerrar"
             />
           </button>
@@ -97,11 +96,11 @@
           </fieldset>
         </form>
       </div>
-      <div class="popup popup_type_add">
+      <div class="popup popup_type_form popup_type_add">
         <form class="popup__form" novalidate>
           <button type="button" class="popup__close-button">
             <img
-              src="./images/close-button.svg"
+              src="<%=require('./images/close-button.svg')%>"
               alt="Logo de botón de cerrar"
             />
           </button>
@@ -112,7 +111,7 @@
                 type="text"
                 id="title-input"
                 class="popup__input"
-                name="title"
+                name="name"
                 placeholder="Título"
                 minlength="2"
                 maxlength="30"
@@ -127,7 +126,7 @@
                 type="url"
                 id="url-input"
                 class="popup__input"
-                name="url"
+                name="link"
                 placeholder="Enlace a la imagen"
                 required
               />
@@ -143,7 +142,7 @@
         <div class="popup__open-image">
           <button class="popup__close-button">
             <img
-              src="./images/close-button.svg"
+              src="<%=require('./images/close-button.svg')%>"
               alt="Logo de botón de cerrar"
             />
           </button>
@@ -153,25 +152,22 @@
       </div>
       <template id="new-card">
         <li class="element">
-          <img class="element__image" />
+          <img class="element__image" src="#" />
           <button class="element__delete-button">
             <img
-              src="./images/delete-button.svg"
+              src="<%=require('./images/delete-button.svg')%>"
               alt="Logo de botón de eliminar"
             />
           </button>
           <h3 class="element__title"></h3>
           <button class="element__like-button">
             <img
-              src="./images/like-button.svg"
+              src="<%=require('./images/like-button.svg')%>"
               alt="Logo de botón de me gusta"
             />
           </button>
         </li>
       </template>
     </div>
-    <script type="module" src="./scripts/index.js"></script>
-    <script type="module" src="./scripts/Card.js"></script>
-    <script type="module" src="./scripts/FormValidator.js"></script>
   </body>
 </html>

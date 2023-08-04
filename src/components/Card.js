@@ -1,19 +1,16 @@
-import { imagePopup, togglePopupVisibility } from "./index.js";
-
 //class for cards
 class Card {
-  constructor(data, cardSelector) {
-    this._name = data.name;
-    this._link = data.link;
-    this._cardSelector = cardSelector;
+  constructor({ cardItem, handleCardClick }, cardSelector) {
+    this._name = cardItem.name;
+    this._link = cardItem.link;
+    this._card = document.querySelector(cardSelector);
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
-    const cardElement = document
-      .querySelector(this._cardSelector)
-      .content.querySelector(".element")
+    const cardElement = this._card.content
+      .querySelector(".element")
       .cloneNode(true);
-
     return cardElement;
   }
 
@@ -36,17 +33,8 @@ class Card {
     this._element
       .querySelector(".element__image")
       .addEventListener("click", () => {
-        this._handleImageClick();
+        this._handleCardClick({ name: this._name, link: this._link });
       });
-  }
-
-  _handleImageClick() {
-    const popupImage = document.querySelector(".popup__image");
-    const popupImageSubtitle = document.querySelector(".popup__image-subtitle");
-    popupImage.src = this._link;
-    popupImage.alt = this._name;
-    popupImageSubtitle.textContent = this._name;
-    togglePopupVisibility(imagePopup);
   }
 
   generateCard() {
@@ -63,4 +51,4 @@ class Card {
   }
 }
 
-export { Card };
+export default Card;

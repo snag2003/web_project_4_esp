@@ -12,6 +12,8 @@ Página Web que muestra fotos como una red social, puedes cambiar tu nombre y de
 - DOM
 - Figma
 - Imágenes
+- POO
+- Webpack
 
 [Mi Página Web](https://snag2003.github.io/web_project_4_esp/)
 

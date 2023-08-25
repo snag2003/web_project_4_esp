@@ -5,6 +5,11 @@
   margin-right: 28px;
 }
 
+.profile__overlay-container:hover .profile__overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 600px) {
   .profile__overlay-container {
     margin: 0;

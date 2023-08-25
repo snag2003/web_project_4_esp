@@ -1,31 +1,3 @@
-const initialCards = [
-  // Array of Initial Cards. Each has a name and a link
-  {
-    name: "Valle de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
-  },
-  {
-    name: "Montañas Calvas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
-  },
-  {
-    name: "Parque Nacional de la Vanoise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
-  },
-];
-
 // Open and Close Buttons
 const editProfileButton = document.querySelector(".profile__edit-button");
 const addImageButton = document.querySelector(".profile__add-button");
@@ -35,7 +7,10 @@ const cardContainer = ".elements__container";
 const imagePopupSelector = ".popup_type_open-image";
 const editPopupSelector = ".popup_type_edit";
 const addPopupSelector = ".popup_type_add";
+const deletePopupSelector = ".popup_type_delete";
+const avatarPopupSelector = ".popup_type_avatar";
 const templateCardSelector = "#new-card";
+const overlaySelector = document.querySelector(".profile__overlay-container");
 
 const formConfig = {
   formSelector: ".popup__form",
@@ -47,7 +22,6 @@ const formConfig = {
 };
 
 export {
-  initialCards,
   editProfileButton,
   addImageButton,
   cardContainer,
@@ -55,5 +29,8 @@ export {
   imagePopupSelector,
   editPopupSelector,
   addPopupSelector,
+  deletePopupSelector,
+  avatarPopupSelector,
   templateCardSelector,
+  overlaySelector,
 };

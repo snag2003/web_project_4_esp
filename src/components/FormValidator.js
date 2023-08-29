@@ -8,7 +8,7 @@ class FormValidator {
     this._buttonElement = this._formElement.querySelector(
       this._config.submitButtonSelector
     );
-    this._errorElements = {}; // Almacena las referencias a los elementos de error
+    this._errorElements = {};
 
     this._inputList.forEach((inputElement) => {
       const errorElement = this._formElement.querySelector(

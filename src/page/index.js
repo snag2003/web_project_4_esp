@@ -84,6 +84,9 @@ api.getInitialCards().then((results) => {
 });
 
 const addFormElement = new PopupWithForm(addPopupSelector, (data) => {
+  const submitButton = document.querySelector(".add-popup__submit-button");
+  submitButton.setAttribute("disabled", true);
+  submitButton.classList.add("popup__submit-button_inactive");
   api
     .postNewCard(data)
     .then((result) => {

@@ -4,158 +4,71 @@ class Api {
     this.headers = options.headers;
   }
 
-  getInitialCards() {
-    return fetch(`${this.baseUrl}/cards`, {
+  _handleResponse(res) {
+    if (!res.ok) {
+      const errorMessage = `Error: ${res.status}`;
+      throw new Error(errorMessage);
+    }
+    return res.json();
+  }
+
+  _handleRequest(url, method, body = null) {
+    const requestOptions = {
+      method,
       headers: this.headers,
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Error: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
+      body: body ? JSON.stringify(body) : null,
+    };
+
+    return fetch(`${this.baseUrl}${url}`, requestOptions)
+      .then((response) => this._handleResponse(response))
+      .catch((error) => {
+        console.log(error);
       });
+  }
+
+  getInitialCards() {
+    return this._handleRequest("/cards", "GET");
   }
 
   getUserInfo() {
-    return fetch(`${this.baseUrl}/users/me`, {
-      headers: this.headers,
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Error: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    return this._handleRequest("/users/me", "GET");
   }
 
   editUserInfo(data) {
-    return fetch(`${this.baseUrl}/users/me`, {
-      method: "PATCH",
-      headers: this.headers,
-      body: JSON.stringify({
-        name: data.name,
-        about: data.job,
-      }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Error: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    return this._handleRequest("/users/me", "PATCH", {
+      name: data.name,
+      about: data.job,
+    });
   }
 
   editAvatar(avatar) {
-    return fetch(`${this.baseUrl}/users/me/avatar`, {
-      method: "PATCH",
-      headers: this.headers,
-      body: JSON.stringify({
-        avatar: avatar.link,
-      }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Error: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    return this._handleRequest("/users/me/avatar", "PATCH", {
+      avatar: avatar.link,
+    });
   }
 
   postNewCard(card) {
-    return fetch(`${this.baseUrl}/cards`, {
-      method: "POST",
-      headers: this.headers,
-      body: JSON.stringify({
-        name: card.name,
-        link: card.link,
-      }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Error: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    return this._handleRequest("/cards", "POST", {
+      name: card.name,
+      link: card.link,
+    });
   }
 
-  deleteCard(cardIdDelete) {
-    return fetch(`${this.baseUrl}/cards/${cardIdDelete}`, {
-      method: "DELETE",
-      headers: this.headers,
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Error: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  deleteCard(cardId) {
+    return this._handleRequest(`/cards/${cardId}`, "DELETE");
   }
 
   setCardIcons() {
-    return fetch(`${this.baseUrl}/users/me`, {
-      headers: this.headers,
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Error: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    return this._handleRequest("/users/me", "GET");
   }
 
   cardLiked(cardId) {
-    return fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
-      method: "PUT",
-      headers: this.headers,
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Error: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    return this._handleRequest(`/cards/likes/${cardId}`, "PUT");
   }
 
   cardUnliked(cardId) {
-    return fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
-      method: "DELETE",
-      headers: this.headers,
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Error: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    return this._handleRequest(`/cards/likes/${cardId}`, "DELETE");
   }
-  // otros métodos para trabajar con la API
 }
 
 export default Api;
